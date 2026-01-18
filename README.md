@@ -8,6 +8,23 @@ The project demonstrates routing, authentication, protected routes, API integrat
 
 ---
 
+## 🌐 Live Links
+
+- Frontend: https://shophub-frontend-three.vercel.app
+- Backend API: https://shophub-backend-kappa.vercel.app
+
+---
+
+## 📦 Repositories
+
+- Frontend (Next.js):  
+  https://github.com/TanvirReza1/shophub-frontend.git
+
+- Backend (Express.js API):  
+  https://github.com/TanvirReza1/shophub.git
+
+---
+
 ## 🚀 Technologies Used
 
 - **Next.js 15/16** (App Router)
@@ -51,7 +68,7 @@ Unauthenticated users attempting to access protected routes are redirected to `/
 - Redirects unauthenticated users automatically
 
 ```js
-email === VALID_EMAIL && password === VALID_PASSWORD;
+email === user@example.com && password === password123;
 ```
 
 > Optional enhancement (not required): NextAuth.js for Google or credential login.
