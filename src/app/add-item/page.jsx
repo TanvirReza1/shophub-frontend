@@ -37,8 +37,10 @@ export default function AddItemPage() {
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/items`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer mock-token",
+      },
       body: JSON.stringify({
         ...form,
         price: Number(form.price),

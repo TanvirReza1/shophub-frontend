@@ -1,5 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ShieldCheck, Truck, Star } from "lucide-react";
+import { Quote } from "lucide-react";
+import { ShoppingCart, LogIn } from "lucide-react";
 
 export default async function Home() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/items`, {
@@ -63,10 +66,15 @@ export default async function Home() {
       </section>
 
       {/* 3. Categories */}
-      <section className="py-20 bg-white  px-6 text-center">
-        <h2 className="text-3xl font-semibold mb-6">Categories</h2>
-        <p className="text-zinc-600 dark:text-zinc-400">
-          Electronics, Fashion, Lifestyle, and more
+      <section className="py-24 px-6 text-center relative">
+        {/* subtle top accent */}
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-300 to-transparent" />
+
+        <h2 className="text-4xl font-bold tracking-tight mb-4 ">Categories</h2>
+
+        <p className="max-w-xl mx-auto text-lg text-zinc-600 leading-relaxed">
+          Electronics, Fashion, Lifestyle, and more — curated for quality and
+          value.
         </p>
       </section>
 
@@ -129,33 +137,94 @@ export default async function Home() {
       </section>
 
       {/* 5. Why Choose Us */}
-      <section className="py-20 bg-white dark:bg-zinc-900 px-6 text-center">
-        <h2 className="text-3xl font-semibold mb-6">Why Choose Us</h2>
-        <p className="max-w-3xl mx-auto text-zinc-600 dark:text-zinc-400">
-          We provide the best quality products with secure checkout and fast
-          delivery.
-        </p>
+
+      <section className="py-24 bg-white dark:bg-zinc-900 px-6">
+        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12">
+          Why Choose Us
+        </h2>
+
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="p-8 rounded-2xl bg-zinc-50 dark:bg-zinc-800 shadow-sm hover:shadow-md transition">
+            <Star className="w-10 h-10 text-indigo-600 mb-4" />
+            <h3 className="text-xl font-semibold mb-3">Quality Products</h3>
+            <p className="text-zinc-600 dark:text-zinc-400">
+              Carefully curated items to ensure high quality, durability, and
+              and value.
+            </p>
+          </div>
+
+          <div className="p-8 rounded-2xl bg-zinc-50 dark:bg-zinc-800 shadow-sm hover:shadow-md transition">
+            <ShieldCheck className="w-10 h-10 text-indigo-600 mb-4" />
+            <h3 className="text-xl font-semibold mb-3">Secure Checkout</h3>
+            <p className="text-zinc-600 dark:text-zinc-400">
+              Your data is protected using modern authentication and security
+              practices.
+            </p>
+          </div>
+
+          <div className="p-8 rounded-2xl bg-zinc-50 dark:bg-zinc-800 shadow-sm hover:shadow-md transition">
+            <Truck className="w-10 h-10 text-indigo-600 mb-4" />
+            <h3 className="text-xl font-semibold mb-3">Fast Delivery</h3>
+            <p className="text-zinc-600 dark:text-zinc-400">
+              Reliable and quick delivery to your doorstep.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* 6. Testimonials */}
-      <section className="py-20 px-6 text-center">
-        <h2 className="text-3xl font-semibold mb-6">Testimonials</h2>
-        <p className="italic text-zinc-600 dark:text-zinc-400">
-          “Amazing experience and great products!”
-        </p>
+      <section className="py-24 px-6 bg-zinc-50 dark:bg-zinc-900">
+        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12">
+          What Our Users Say
+        </h2>
+
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white dark:bg-zinc-800 p-8 rounded-2xl shadow-sm">
+            <Quote className="w-8 h-8 text-indigo-600 mb-4" />
+            <p className="text-zinc-600 dark:text-zinc-400 mb-4">
+              ShopHub made it incredibly easy to manage products and build a
+              clean shopping experience.
+            </p>
+            <div className="font-semibold">— Alex Morgan</div>
+          </div>
+
+          <div className="bg-white dark:bg-zinc-800 p-8 rounded-2xl shadow-sm">
+            <Quote className="w-8 h-8 text-indigo-600 mb-4" />
+            <p className="text-zinc-600 dark:text-zinc-400 mb-4">
+              The interface is modern, fast, and feels production-ready.
+            </p>
+            <div className="font-semibold">— Sarah Khan</div>
+          </div>
+        </div>
       </section>
 
       {/* 7. Call To Action */}
-      <section className="py-20 bg-indigo-600 text-white text-center px-6">
-        <h2 className="text-3xl font-semibold mb-4">
+      <section className="py-24 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-center px-6">
+        <h2 className="text-3xl md:text-4xl font-semibold mb-4">
           Ready to start shopping?
         </h2>
-        <a
-          href="/items"
-          className="inline-block mt-4 px-6 py-3 bg-white text-indigo-600 rounded-md font-semibold hover:bg-zinc-100"
-        >
-          Browse Items
-        </a>
+
+        <p className="max-w-xl mx-auto text-indigo-100 mb-8">
+          Discover quality products and a seamless shopping experience.
+        </p>
+
+        <div className="flex justify-center gap-4">
+          <Link
+            href="/items"
+            className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-indigo-100 transition"
+          >
+            <ShoppingCart className="w-5 h-5" />
+            Browse Items
+          </Link>
+
+          <a
+            href="/login"
+            className="border border-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-white hover:text-indigo-600 transition"
+          >
+            <LogIn className="w-5 h-5" />
+            Get Started
+          </a>
+        </div>
       </section>
     </div>
   );

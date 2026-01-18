@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Brand */}
         <div>
-          <h2 className="text-xl font-semibold tracking-tight">YourBrand</h2>
+          <h2 className="text-xl font-semibold tracking-tight">ShopHub</h2>
           <p className="mt-4 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
             Premium quality products crafted with care. Built for modern
             experiences.

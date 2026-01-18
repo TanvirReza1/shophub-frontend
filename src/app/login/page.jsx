@@ -23,11 +23,20 @@ export default function LoginPage() {
     }
   }
 
+  function handleMockLogin() {
+    setEmail(VALID_EMAIL);
+    setPassword(VALID_PASSWORD);
+
+    document.cookie = `auth_token=true; path=/`;
+    router.push("/items");
+    router.refresh();
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-8 rounded shadow-md w-full max-w-md"
+        className="p-8 rounded shadow-md w-full max-w-md"
       >
         <h1 className="text-2xl font-bold mb-6 text-center">Login</h1>
 
@@ -52,8 +61,17 @@ export default function LoginPage() {
 
         {error && <p className="text-red-500 mb-3">{error}</p>}
 
-        <button className="bg-indigo-600 text-white w-full py-3 rounded hover:bg-indigo-700">
+        <button className="bg-indigo-600 text-white w-full py-3 rounded hover:bg-indigo-700 mb-3">
           Login
+        </button>
+
+        {/* ✅ Mock Login Button */}
+        <button
+          type="button"
+          onClick={handleMockLogin}
+          className="bg-gray-200 text-black w-full py-3 rounded hover:bg-gray-300"
+        >
+          Mock Login
         </button>
       </form>
     </div>
