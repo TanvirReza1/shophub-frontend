@@ -114,8 +114,8 @@ email === user@example.com && password === password123;
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd project-name
+git clone https://github.com/TanvirReza1/shophub-frontend.git
+cd project-shophub
 ```
 
 ### 2️⃣ Install Dependencies
