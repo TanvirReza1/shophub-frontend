@@ -16,7 +16,7 @@ export default function LoginPage() {
 
     if (email === VALID_EMAIL && password === VALID_PASSWORD) {
       document.cookie = `auth_token=true; path=/`;
-      router.push("/items");
+      router.push("/");
       router.refresh();
     } else {
       setError("Invalid email or password");
@@ -28,7 +28,7 @@ export default function LoginPage() {
     setPassword(VALID_PASSWORD);
 
     document.cookie = `auth_token=true; path=/`;
-    router.push("/items");
+    router.push("/");
     router.refresh();
   }
 
