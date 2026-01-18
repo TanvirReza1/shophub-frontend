@@ -20,6 +20,12 @@ export default function Navbar() {
 
       {/* Middle - Main Navigation */}
       <div className="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
+        <Link
+          href="/"
+          className="text-sm font-medium text-gray-300 hover:text-white transition"
+        >
+          Home
+        </Link>
         <Link href="/about" className="hover:text-white transition">
           About
         </Link>
